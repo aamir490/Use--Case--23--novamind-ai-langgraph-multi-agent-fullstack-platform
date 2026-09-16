@@ -8,9 +8,19 @@ node_modules/
 # Environment Files
 # =========================
 .env
-.env.*
+.env.local
+.env.development
+.env.production
+.env.test
 **/.env
-**/.env.*
+**/.env.local
+**/.env.development
+**/.env.production
+**/.env.test
+
+# env.example files are SAFE to commit — they contain no real secrets
+# !.env.example
+# !**/.env.example
 
 # =========================
 # Logs
