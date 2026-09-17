@@ -42,7 +42,9 @@ ${state.prompt}
         `
 
         const res=await llm.invoke(prompt)
-        const data=JSON.parse(res.content)
+        const raw = res.content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim()
+        const data = JSON.parse(raw)
+
        await deductCredits(state.userId,"pdf")
         
         const pdfBuffer=await generatePdf(data)

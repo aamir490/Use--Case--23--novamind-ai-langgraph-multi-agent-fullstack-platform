@@ -1,5 +1,5 @@
 import React from 'react'
-import { Coins, LogOut, Menu, MessageSquare, PanelLeftIcon, PanelRight, PenSquare, Plus, User, X } from "lucide-react"
+import { Coins, LogOut, Menu, MessageSquare, PanelLeftIcon, PanelRight, PenSquare, Plus, User, X, Shield } from "lucide-react"
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import logo from '../assets/novamind_ai_logo.jpg'
 import { useState } from 'react'
@@ -11,6 +11,7 @@ import { createConversation } from '../features/createConversation'
 import logOut from '../features/logOut'
 import { setUserdata } from '../redux/userSlice'
 import BillingDrawer from './BillingDrawer'
+import { useNavigate } from 'react-router-dom'
 
 function SideBar() {
     const [collapsed, setCollapsed] = useState(false)
@@ -20,6 +21,8 @@ function SideBar() {
     const { userData } = useSelector(state => state.user)
     const [showBilling, setShowBilling] = useState(false)
     const [mobileOpen, setMobileOpen] = useState(false)
+    const navigate = useNavigate()
+    const isAdmin = userData?.email === import.meta.env.VITE_ADMIN_EMAIL
 
     useEffect(() => {
         const getConv = async () => {
@@ -256,6 +259,15 @@ function SideBar() {
                                 <p className='text-[11px] text-slate-600 mt-px capitalize'>{userData?.plan || 'free'} plan</p>
                             </div>
                             <div className='flex gap-1'>
+                                {isAdmin && (
+                                    <button
+                                        onClick={() => navigate('/admin')}
+                                        title='Admin Panel'
+                                        className='flex items-center justify-center w-7 h-7 rounded-[7px] border-none bg-transparent cursor-pointer hover:bg-indigo-500/10 hover:text-indigo-400 transition-all duration-150'
+                                        style={{ color: '#818cf8' }}>
+                                        <Shield size={15} />
+                                    </button>
+                                )}
                                 <button
                                     onClick={() => setShowBilling(true)}
                                     className='flex items-center justify-center w-7 h-7 rounded-[7px] border-none bg-transparent text-yellow-500/70 cursor-pointer hover:bg-yellow-500/10 hover:text-yellow-400 transition-all duration-150'>

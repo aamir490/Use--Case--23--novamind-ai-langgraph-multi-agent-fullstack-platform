@@ -40,12 +40,38 @@ Make sure these are installed before starting:
 ---
 ## Step 0 — Start Docker Desktop
 
+```text
+PS E:\GenAi-Project-Cloudage\1.cortexAI> dir
+
+
+    Directory: E:\GenAi-Project-Cloudage\1.cortexAI
+
+
+Mode                 LastWriteTime         Length Name                                                                                                    
+----                 -------------         ------ ----                                                                                                    
+d-----        13-07-2026  04:56 PM                .github                                                                                                 
+d-----        27-06-2026  02:18 PM                backend                                                                                                 
+d-----        16-09-2026  05:55 PM                frontend                                                                                                
+-a----        16-09-2026  05:59 PM           1498 .gitignore                                                                                              
+-a----        16-09-2026  04:36 PM          60477 deploy_on_aws_guide.md                                                                                  
+-a----        16-09-2026  02:09 PM           1330 notes_new.txt                                                                                           
+-a----        09-09-2026  05:48 PM          56971 novamind_ai_logo.jpg                                                                                    
+-a----        16-09-2026  08:44 PM           9746 steps_to_do_deploy_localhost.md 
+```
+
+
 ```powershell
-# start Docker Desktop
-Start-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+cd backend
+
+# Found it — Docker is installed at a non-standard location. The correct path is:
+# C:\Users\aamir\AppData\Local\Programs\DockerDesktop\
+
+# Start Docker Desktop with: PowerShell — any folder
+Start-Process "C:\Users\aamir\AppData\Local\Programs\DockerDesktop\Docker Desktop.exe"
 
 # verify 
 docker ps
+docker info
 ```
 
 ## Step 1 — Start Redis via Docker
@@ -63,6 +89,9 @@ Verify Redis is running:
 
 ```bash
 docker ps
+
+# output :- CONTAINER ID   IMAGE     COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+# 9dacb2b6f199   redis     "docker-entrypoint.s…"   11 seconds ago   Up 10 seconds   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp   backend-redis-1
 ```
 
 You should see a container with image `redis` running on port `6379`.
