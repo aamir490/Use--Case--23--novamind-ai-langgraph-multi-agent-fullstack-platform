@@ -64,6 +64,50 @@ The platform is built on **LangGraph**, a stateful agent orchestration framework
 
 ---
 
+## Application Screenshots
+
+### Authentication
+
+![Login page — sign in](project-pic/NovaMind-Ai-MultiAgent-Platform-LoginPage-1.png)
+
+![Login page — authentication flow](project-pic/NovaMind-Ai-MultiAgent-Platform-LoginPage-2.png)
+
+### AI Workspace Dashboard
+
+![NovaMind AI dashboard — overview](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-2.png)
+
+![NovaMind AI dashboard — conversation workspace](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-3.png)
+
+![NovaMind AI dashboard — agent experience](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-4.png)
+
+![NovaMind AI dashboard — chat interface](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-5.png)
+
+![NovaMind AI dashboard — extended workspace](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-6.png)
+
+![NovaMind AI dashboard — generated content view](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-7.png)
+
+![NovaMind AI dashboard — application feature](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-8.png)
+
+![NovaMind AI dashboard — application feature detail](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-9.png)
+
+![NovaMind AI dashboard — complete workspace](project-pic/NovaMind-Ai-MultiAgent-Platform-Dashboard-10.png)
+
+### Administration and Billing
+
+![Admin panel — dashboard overview](project-pic/NovaMind-Ai-MultiAgent-Platform-AdminPanel-1.png)
+
+![Admin panel — user management](project-pic/NovaMind-Ai-MultiAgent-Platform-AdminPanel-2.png)
+
+![Admin panel — analytics](project-pic/NovaMind-Ai-MultiAgent-Platform-AdminPanel-3.png)
+
+![Admin panel — payment management](project-pic/NovaMind-Ai-MultiAgent-Platform-AdminPanel-payment-1.png)
+
+![Admin panel — user information](project-pic/NovaMind-Ai-MultiAgent-Platform-AdminPanel-userinfo.png)
+
+![Admin panel — administration view](project-pic/screencapture-localhost-5173-admin-2026-09-17-00_03_44.png)
+
+---
+
 ## Architecture Overview
 
 NovaMind AI is a **microservices application** — 5 independent Node.js services communicate through a central API Gateway. The frontend never talks to services directly.

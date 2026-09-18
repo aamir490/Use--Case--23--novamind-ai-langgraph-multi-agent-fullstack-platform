@@ -398,6 +398,7 @@ Expected: No output means all ports are free.
 ```powershell
 # Yes. From the AWS Kiro PowerShell terminal, you can stop Docker Desktop with:
 Stop-Process -Name "Docker Desktop" -Force
+Stop-Process -Name "Docker Desktop" -Force -ErrorAction SilentlyContinue
 
 # If that doesn't work, use:
 taskkill /F /IM "Docker Desktop.exe"
